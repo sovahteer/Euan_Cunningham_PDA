@@ -4,7 +4,10 @@ window.onload = function(){
 
   var updateView = function() {
     var runningTotal = document.querySelector('#running_total');
-    runningTotal.value = calculator.runningTotal;
+    if( calculator.runningTotal === Infinity)
+        runningTotal.value = 'Well done, genius. You killed the world.'; // Make sure the sentence matches
+    else
+        runningTotal.value = calculator.runningTotal;
   };
 
   //bind number clicks to number buttons
